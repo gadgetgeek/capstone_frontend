@@ -14,7 +14,15 @@ export default {
     // "bundle": true,
   },
   packageOptions: {
-    /* ... */
+    knownEntrypoints: [
+      'svelte/store',
+      'svelte/internal',
+      'svelte-hmr/runtime/hot-api-esm.js',
+      'svelte-hmr/runtime/proxy-adapter-dom.js',
+      'svelte/internal',
+      'svelte-hmr/runtime/hot-api-esm.js',
+      'svelte-hmr/runtime/proxy-adapter-dom.js'
+    ]
   },
   devOptions: {
     /* ... */
