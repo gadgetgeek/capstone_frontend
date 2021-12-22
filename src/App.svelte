@@ -4,6 +4,9 @@
   import AllDids from "./pages/AllDids.svelte";
   import SingleDid from "./pages/SingleDid.svelte";
   import Form from "./pages/Form.svelte";
+  import Modal from './components/Modal.svelte';
+import { bubble } from 'svelte/internal';
+
 
   export let url = ""; // prop for router to url
   let dids; // variable to hold dids
@@ -24,6 +27,9 @@
   //     clearInterval(interval);
   //   };
   // });
+
+  //for my modal
+  let modal;
 </script>
 
 <style>
@@ -52,7 +58,14 @@
       <Route path="/">
         <AllDids dids={dids} />
       </Route>
+      <button on:click={() => modal.show()}>Show What</button>
+      <Modal bind:this={modal}>
+      <h2>Progress Report</h2>
+      <p>I will update this when i'm done</p>
+        <button on:click={() => modal.hide()}>Close it</button>
+      
+      </Modal>
     </main>
-      <!-- <p>Page has been open for <code>{count}</code> seconds.</p> -->
+      
   </div>
 </Router>
