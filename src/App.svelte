@@ -25,10 +25,36 @@
   let modal;
 </script>
 
+<!-- Look Kerlin & Sarah...CSS just like mom used to make! -->
 <style>
   .App {
     text-align: center;
+    text-decoration: none;
   }
+  .main {
+    text-decoration: none;
+  }
+  .h1 {
+    color: #4CAF50;
+  }
+  .btn_mod {
+    transition: 0.4s;
+  }
+  .btn_mod:hover {
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .btn2 {
+    transition: 0.4s;
+  }
+  .btn2:hover {
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+  }
+
   
 </style>
 
@@ -38,7 +64,7 @@
       <Link to="/new">
         <button class="btn2">New Did</button>
       </Link>
-    <main>
+    <main class="main">
       <Route path="/post/:id" let:params>
         <SingleDid dids={dids} id={params.id} url={baseURL} getDids={getDids}/>
       </Route>
@@ -51,10 +77,15 @@
       <Route path="/">
         <AllDids dids={dids} />
       </Route>
-      <button on:click={() => modal.show()}>Show What</button>
+      <button class="btn_mod" on:click={() => modal.show()}>Did Reminder</button>
       <Modal bind:this={modal}>
-      <h2>Progress Report</h2>
-      <p>I will update this when i'm done</p>
+      <h2>Reminder</h2>
+      <ul style="text-align: left;">
+        <li>25% Doing Code Challenges</li>
+        <li>25% Learning New Tech or Solidifying Foundation</li>
+        <li>25% Sending Out Job Application (2 SOLID Applications per hour)</li>
+        <li>25% Networking and Branding</li>
+      </ul>
         <button on:click={() => modal.hide()}>Close it</button>
       </Modal>
     </main>

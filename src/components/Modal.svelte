@@ -24,6 +24,7 @@
         max-width: 80vw;
         padding: 1rem;
         margin: 15% auto;
+        border-radius: 8px;
     }
     .close {
         float: right;
